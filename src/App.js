@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { createContext } from "react";
+import { Route, Routes } from "react-router-dom";
+import Jobcomponent from "./components/Job_components/Job_component";
+import Companycomponent from "./components/company_components/company_component";
+
+// export const user_context = createContext();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <user_context.createContext> */}
+      <Routes>
+        <Route
+          path="/add_job/:id"
+          element={
+            <>
+              <Jobcomponent />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/add_compony"
+          element={
+            <>
+              <Companycomponent />
+            </>
+          }
+        ></Route>
+      </Routes>
+      {/* </user_context.createContext> */}
+    </>
   );
 }
 
